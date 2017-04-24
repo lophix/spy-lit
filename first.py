@@ -1,4 +1,4 @@
-# -*- encoding:UTF-8 -*-
+# -*- coding:UTF-8 -*-
 import urllib.request
 
 url = "http://www.baidu.com"
