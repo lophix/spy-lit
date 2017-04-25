@@ -42,7 +42,7 @@ post = urllib.parse.urlencode(postdata).encode()
 ssl.match_hostname = lambda cert, hostname: True
 data = opener.open(url,post).read()
 
-with open('F:\dirty\_douban', 'wb') as f:
+with open('F:\\dirty\\_douban', 'wb') as f:
     f.write(data)
 
 print('done!')
