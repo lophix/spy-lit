@@ -28,7 +28,7 @@ req = urllib.request.Request(url=finalurl, headers=headers)
 
 data = urllib.request.urlopen(req).read()
 
-saveFile(str(data))
+#saveFile(str(data))
 
 for link,t,s in set(re.findall(r'(https:(//[a-zA-Z0-9\./_=,&]*\.(jpg|jpeg|gif|png)))', str(data))):
     print(link)
