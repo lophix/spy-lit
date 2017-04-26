@@ -10,12 +10,14 @@ def saveImage(data,i):
     with open(path + "\\data", 'w') as f:
         f.write(str(data))
 
-    for link,t,s in set(re.findall(r'(https:(//[a-zA-Z0-9\./_=,&]*\.(jpg|jpeg|gif|png)))', str(data))):
-        #print(link)
+    for link,t,s,h in set(re.findall(r'((http|https):(//[a-zA-Z0-9\./_=,&]*\.(jpg|jpeg|gif|png)))', str(data))):
         t = lambda l:os.path.join(path, l[l.rindex('/')+1:])
+        fileName = t(link)
+        print(fileName)
         try:
-            urllib.request.urlretrieve(link, t(link))
+            urllib.request.urlretrieve(link, fileName)
         except:
+            print(link)
             print('失败')
 
 def ungzip(data):  
